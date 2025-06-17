@@ -1,1 +1,140 @@
-<html>heja
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futurystyczne Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Style globalne i animowane tło --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            overflow: hidden; /* Ukrywa paski przewijania, które mogłyby powstać przez animację tła */
+
+            /* Definicja gradientu jako tła */
+            background: linear-gradient(
+                -45deg, 
+                #0d0221, /* Głęboki fiolet */
+                #0c0032, /* Ciemny niebieski */
+                #240046, /* Purpura */
+                #3c096c  /* Fiolet */
+            );
+
+            /* Ustawienie rozmiaru tła na znacznie większy niż ekran, aby animacja była możliwa */
+            background-size: 400% 400%;
+            
+            /* Definicja animacji */
+            animation: gradientAnimation 20s ease infinite;
+        }
+
+        /* Animacja przesuwania tła */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Kontener menu z efektem szkła (Glassmorphism) --- */
+        .menu-container {
+            width: 90%;
+            max-width: 450px;
+            padding: 2.5rem 2rem;
+            
+            /* Kluczowe właściwości dla efektu szkła */
+            background: rgba(255, 255, 255, 0.1); /* Półprzezroczyste tło */
+            backdrop-filter: blur(12px); /* Rozmycie tła za elementem */
+            -webkit-backdrop-filter: blur(12px); /* Dla wsparcia w Safari */
+            
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Delikatna ramka */
+            border-radius: 20px; /* Zaokrąglone rogi */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Cień dodający głębi */
+            text-align: center;
+        }
+
+        .menu-container h1 {
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .menu-container p {
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #d1d1d1;
+        }
+
+        /* --- Stylizacja listy menu --- */
+        .futuristic-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .futuristic-menu li {
+            margin-bottom: 1rem;
+        }
+
+        .futuristic-menu li:last-child {
+            margin-bottom: 0;
+        }
+
+        .futuristic-menu a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #f0f0f0;
+            font-size: 1.1rem;
+            font-weight: 400;
+            
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
+            border-radius: 10px;
+
+            /* Płynne przejście dla efektu hover */
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* --- Efekt po najechaniu myszką --- */
+        .futuristic-menu a:hover {
+            background: rgba(255, 255, 255, 0.2); /* Lekkie rozjaśnienie tła */
+            border-color: rgba(255, 255, 255, 0.4); /* Widoczna ramka */
+            color: #fff; /* Jaśniejszy tekst */
+            transform: translateY(-3px) scale(1.02); /* Lekkie uniesienie i powiększenie */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtelny cień */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h1>in1place2 Usługi/AI</h1>
+        <p>Wybierz moduł</p>
+        
+        <nav class="futuristic-menu">
+            <ul>
+                <li><a href="#">Dobieranie grafik do video/photo</a></li>
+                <li><a href="#">Szybkie generowanie wykresów</a></li>
+                <li><a href="#">Chat</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+</html>
